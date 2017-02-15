@@ -1,4 +1,11 @@
 *.class
+*.idea
+.idea
+out
+target
+*.iml
+log
+backup
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
