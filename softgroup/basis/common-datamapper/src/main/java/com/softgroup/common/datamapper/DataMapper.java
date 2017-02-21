@@ -1,25 +1,28 @@
 package com.softgroup.common.datamapper;
 
 import java.io.InputStream;
-import java.util.Map;
 
 /**
  * @author vlischyshyn
  */
-public interface DataMapper<T> {
+public interface DataMapper {
 
-	Map convertToMap(final T value);
+	convertToMap(Object value);
 
-	<T> T convert(Map<String, T> map, Class<T> dataType);
+	convert(map, Class<T> dataType);
 
-	<T>T mapData(String data, Class<T> dataType);
+	convert(map, dataType);
 
-	<T> T mapData(byte[] message, Class<T> dataType);
+	mapData(String data, dataType);
 
-	<T> T readValue(InputStream src, Class<T> valueType);
+	mapData(String data, dataType);
 
-	String dataToString(T data);
+	mapData(byte[] message, dataType);
 
-	String objectToString(T data);
+	readValue(InputStream src, valueType);
+
+	String dataToString(data);
+
+	String objectToString(data);
 
 }

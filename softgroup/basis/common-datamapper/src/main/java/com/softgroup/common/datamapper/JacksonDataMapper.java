@@ -16,7 +16,7 @@ import java.util.Map;
 /**
  * @author Arthas
  */
-public class JacksonDataMapper<T> implements DataMapper<T> {
+public class JacksonDataMapper implements DataMapper {
 	private static final String CPJ = "Can't parse json";
 
 	private final ObjectMapper mapper;
@@ -35,16 +35,16 @@ public class JacksonDataMapper<T> implements DataMapper<T> {
 	}
 
 	@Override
-	public Map<String, T> convertToMap(final T value) {
+	public Map<convertToMap(final value) {
 		try {
-			return (Map<String, T>) mapper.convertValue(value, Map.class);
+			return (Map<String, Object>) mapper.convertValue(value, Map.class);
 		} catch (Exception ex) {
 			throw new MapperException("Can't convert to map ", ex);
 		}
 	}
 
 	@Override
-	public <T> T convert(Map<String, T> map, Class<T> dataType) {
+	public convert(map, dataType) {
 		try {
 			return mapper.convertValue(map, dataType);
 		} catch (Exception ex) {
@@ -52,9 +52,17 @@ public class JacksonDataMapper<T> implements DataMapper<T> {
 		}
 	}
 
+	@Override
+	public convert(map, dataType) {
+		try {
+			return mapper.convertValue(map, dataType);
+		} catch (Exception ex) {
+			throw new MapperException("Can't convert map ", ex);
+		}
+	}
 
 	@Override
-	public <T> T mapData(String data, Class<T> dataType) {
+	public mapData(String data, dataType) {
 		try {
 			return mapper.readValue(data, dataType);
 		} catch (Exception ex) {
@@ -63,7 +71,16 @@ public class JacksonDataMapper<T> implements DataMapper<T> {
 	}
 
 	@Override
-	public <T> T mapData(byte[] message, Class<T> dataType) {
+	public mapData(String data, dataType) {
+		try {
+			return mapper.readValue(data, dataType);
+		} catch (Exception ex) {
+			throw new MapperException(CPJ, ex);
+		}
+	}
+
+	@Override
+	public mapData(byte[] message, dataType) {
 		try {
 			return mapper.readValue(message, dataType);
 		} catch (Exception ex) {
@@ -72,7 +89,7 @@ public class JacksonDataMapper<T> implements DataMapper<T> {
 	}
 
 	@Override
-	public <T> T readValue(InputStream src, Class<T> valueType) {
+	public readValue(InputStream src, valueType) {
 		try {
 			return mapper.readValue(src, valueType);
 		} catch (Exception ex) {
@@ -81,7 +98,7 @@ public class JacksonDataMapper<T> implements DataMapper<T> {
 	}
 
 	@Override
-	public String dataToString(T data) {
+	public String dataToString(data) {
 		try {
 			return new String(mapper.writeValueAsBytes(data), "UTF-8");
 		} catch (Exception ex) {
@@ -90,7 +107,7 @@ public class JacksonDataMapper<T> implements DataMapper<T> {
 	}
 
 	@Override
-	public String objectToString(T data) {
+	public String objectToString(data) {
 		try {
 			return mapper.writeValueAsString(data);
 		} catch (Exception e) {
