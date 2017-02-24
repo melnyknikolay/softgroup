@@ -1,28 +1,31 @@
 package com.softgroup.common.datamapper;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+
 import java.io.InputStream;
+import java.util.Map;
 
 /**
  * @author vlischyshyn
  */
 public interface DataMapper {
 
-	convertToMap(Object value);
+	Map<String, Object> convertToMap(Object value);
 
-	convert(map, Class<T> dataType);
+	<T> T convert(Map<String, Object> map, Class<T> datatype);
 
-	convert(map, dataType);
+	<T> T convert(Map<String, Object> map, TypeReference<?> dataType);
 
-	mapData(String data, dataType);
+	<T> T mapData(String data, Class<T> dataType);
 
-	mapData(String data, dataType);
+	<T> T mapData(String data, TypeReference<?> dataType);
 
-	mapData(byte[] message, dataType);
+	<T> T mapData(byte[] message, Class<T> dataType);
 
-	readValue(InputStream src, valueType);
+	<T> T readValue(InputStream src, Class<T> valueType);
 
-	String dataToString(data);
+	<T> String dataToString(T data);
 
-	String objectToString(data);
+	String objectToString(Object data);
 
 }
