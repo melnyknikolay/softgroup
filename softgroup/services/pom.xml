@@ -13,8 +13,8 @@
 
 	<modules>
 		<module>authorization</module>
-		<!--<module>messenger</module>-->
-		<!--<module>profile</module>-->
+		<module>messenger</module>
+		<module>profile</module>
 	</modules>
 
 	<properties>
