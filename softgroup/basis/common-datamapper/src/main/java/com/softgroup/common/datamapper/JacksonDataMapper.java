@@ -53,6 +53,15 @@ public class JacksonDataMapper implements DataMapper {
 	}
 
 	@Override
+	public <T> T convert(Object obj, TypeReference<?> dataType) {
+		try {
+			return mapper.convertValue(obj, dataType);
+		} catch (Exception ex) {
+			throw new MapperException("Can't convert map ", ex);
+		}
+	}
+
+	@Override
 	public <T> T convert(Map<String, Object> map, TypeReference<?> dataType) {
 		try {
 			return mapper.convertValue(map, dataType);
