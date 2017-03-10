@@ -1,12 +1,12 @@
 package com.softgroup.authorization.api.message;
 
-import com.softgroup.common.protocol.RequestData;
+import com.softgroup.common.protocol.Data;
 
 /**
  * @author odin
  * @since 20.02.17.
  */
-public class RegisterRequest implements RequestData{
+public class RegisterRequest implements Data {
 	private static final long serialVersionUID = -645554380912935546L;
 
 	private Integer phone_number;

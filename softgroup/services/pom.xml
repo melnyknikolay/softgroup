@@ -26,15 +26,28 @@
 		<dependencies>
 			<dependency>
 				<groupId>com.softgroup</groupId>
-				<artifactId>common-protocol</artifactId>
+				<artifactId>authorization-api</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>com.softgroup</groupId>
-				<artifactId>common-router</artifactId>
+				<artifactId>messenger-api</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+
+			<dependency>
+				<groupId>com.softgroup</groupId>
+				<artifactId>profile-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.softgroup</groupId>
+				<artifactId>common-router-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
@@ -51,7 +64,12 @@
 
 		<dependency>
 			<groupId>com.softgroup</groupId>
-			<artifactId>common-router</artifactId>
+			<artifactId>common-exceptions</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.softgroup</groupId>
+			<artifactId>common-router-api</artifactId>
 		</dependency>
 	</dependencies>
 

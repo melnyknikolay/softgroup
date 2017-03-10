@@ -1,20 +1,24 @@
 package com.softgroup.common.router.api;
 
 
-import com.softgroup.common.protocol.Request;
-import com.softgroup.common.protocol.RequestData;
-import com.softgroup.common.protocol.Response;
-import com.softgroup.common.protocol.ResponseData;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.softgroup.common.exceptions.MapperException;
+import com.softgroup.common.protocol.*;
 
-public class AbstractRequestHandler<T extends RequestData, R extends ResponseData> implements RequestHandler {
-	@Override
-	public String getName() {
-		return null;
-	}
+
+public abstract class AbstractRequestHandler<T extends RequestData, R extends ResponseData> implements RequestHandler {
 
 	@Override
-	public Response<R> handle(Request<?> msg) {
-		return null;
+	public Response<R> handle(Request<?> msg) throws ClassNotFoundException {
+		try {
+			Request<T> typedRequest = ProtocolBeansFactory.getTypedRequest(msg, new TypeReference<T>() {
+			});
+			return doHandle(typedRequest);
+		}catch (MapperException e){
+			return ProtocolBeansFactory.badRequest(msg);
+		}
 	}
+
+	protected abstract Response<R> doHandle(Request<T> msg);
 
 }
