@@ -10,5 +10,5 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class AuthFactory<T extends AuthorizationRequestHandler> extends HandlerFactory<T> implements AuthorizationFactory<T> {
+public class AuthFactory extends HandlerFactory<AuthorizationRequestHandler> implements AuthorizationFactory {
 }
