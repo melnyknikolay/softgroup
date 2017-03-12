@@ -7,7 +7,7 @@ import java.io.Serializable;
  * Created by nikmlk on 08.03.17.
  */
 
-public class ProtocolBeansFactory {
+public class ProtocolUtils {
 
     public static <T extends Serializable> Request<T> getRequest(Request<?> msg, T data) {
         return new Request.Builder<T>()
