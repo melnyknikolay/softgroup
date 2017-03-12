@@ -4,9 +4,9 @@ import java.io.Serializable;
 import java.util.UUID;
 
 public class ActionHeader implements Serializable {
-	private static final long serialVersionUID = -6161658016500127613L;
+    private static final long serialVersionUID = -6161658016500127613L;
 
-	private String uuid;
+    private String uuid;
     private String originUuid;
     private String command;
     private String type;
