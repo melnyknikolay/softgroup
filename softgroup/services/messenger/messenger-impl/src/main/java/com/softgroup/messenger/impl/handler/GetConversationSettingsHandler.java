@@ -1,7 +1,9 @@
 package com.softgroup.messenger.impl.handler;
 
+import com.softgroup.common.protocol.ProtocolBeansFactory;
 import com.softgroup.common.protocol.Request;
 import com.softgroup.common.protocol.Response;
+import com.softgroup.common.protocol.ResponseStatus;
 import com.softgroup.common.router.api.AbstractRequestHandler;
 import com.softgroup.messenger.api.message.GetConversationSettingsRequest;
 import com.softgroup.messenger.api.message.GetConversationSettingsResponse;
@@ -21,7 +23,6 @@ public class GetConversationSettingsHandler <T extends GetConversationSettingsRe
 
     @Override
     protected Response<R> doHandle(Request<T> msg) {
-        //ToDo
-        return null;
+        return ProtocolBeansFactory.getResponse(msg, null, ResponseStatus.NOT_IMPLEMENTED);
     }
 }
