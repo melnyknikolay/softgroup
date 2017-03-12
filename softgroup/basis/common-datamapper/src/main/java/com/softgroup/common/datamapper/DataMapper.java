@@ -14,13 +14,15 @@ public interface DataMapper {
 
 	<T> T convert(Map<String, Object> map, Class<T> datatype);
 
-	<T> T convert(Object obj, TypeReference<?> dataType);
+	<T> T convert(Object obj, TypeReference<T> dataType);
 
-	<T> T convert(Map<String, Object> map, TypeReference<?> dataType);
+	<T> T convert(Object obj, Class<T> datatype);
+
+	<T> T convert(Map<String, Object> map, TypeReference<T> dataType);
 
 	<T> T mapData(String data, Class<T> dataType);
 
-	<T> T mapData(String data, TypeReference<?> dataType);
+	<T> T mapData(String data, TypeReference<T> dataType);
 
 	<T> T mapData(byte[] message, Class<T> dataType);
 
