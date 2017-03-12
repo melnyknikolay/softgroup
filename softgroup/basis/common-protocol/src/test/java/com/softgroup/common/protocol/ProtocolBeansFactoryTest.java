@@ -1,22 +1,21 @@
 package com.softgroup.common.protocol;
 
+import com.softgroup.common.datamapper.DataMapper;
+import com.softgroup.common.datamapper.JacksonDataMapper;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import java.io.Serializable;
 
 import static org.junit.Assert.*;
-
+import static org.hamcrest.core.Is.*;
 /**
  * Created by nikmlk on 10.03.17.
  */
 
-@RunWith(SpringJUnit4ClassRunner.class)
 public class ProtocolBeansFactoryTest {
 
-    Request<?> request = new Request.Builder()
-            .setData("fwknk")
+    private DataMapper mapper = new JacksonDataMapper();
+
+    private Request<?> request = new Request.Builder()
+            .setData("testData")
             .setHeader(new ActionHeader.Builder()
                                         .setCommand("command")
                                         .setOriginUuid("uuid")
@@ -24,8 +23,27 @@ public class ProtocolBeansFactoryTest {
                                         .setVersion("version")
                                         .build())
             .build();
+
     @Test
-    public void serverErrorTest(){
-        Response<Serializable> serializableResponse = ProtocolBeansFactory.serverError(request);
+    public void getRequestTest(){
+        Request<String> result = ProtocolBeansFactory.getRequest(this.request, mapper.convert(request.getData(), String.class));
+        assertThat(result.getData() , isA(String.class));
+        assertEquals(result.getHeader(), request.getHeader());
+    }
+
+    @Test
+    public void getResponseOkTest(){
+        Response<String> result = ProtocolBeansFactory.getResponse(request, "responseTestData");
+        assertThat(result.getData() , isA(String.class));
+        assertEquals("responseTestData", result.getData());
+        assertThat(result.getStatus(), is(ResponseStatus.OK));
+    }
+
+    @Test
+    public void getResponseWithStatusTest(){
+        Response<Integer> result = ProtocolBeansFactory.getResponse(request, 524, ResponseStatus.NOT_IMPLEMENTED);
+        assertThat(result.getData() , isA(Integer.class));
+        assertEquals((long) 524, (long)result.getData());
+        assertThat(result.getStatus(), is(ResponseStatus.NOT_IMPLEMENTED));
     }
 }
