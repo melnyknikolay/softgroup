@@ -18,10 +18,10 @@ public abstract class AbstractRequestHandler<T extends RequestData, R extends Re
 		try {
 			T data = mapper.convert(msg.getData(), new TypeReference<T>() {
 			});
-			Request<T> typedRequest = ProtocolBeansFactory.getRequest(msg, data);
+			Request<T> typedRequest = ProtocolUtils.getRequest(msg, data);
 			return doHandle(typedRequest);
 		}catch (MapperException e){
-			return ProtocolBeansFactory.getResponse(msg, null, ResponseStatus.BAD_REQUEST);
+			return ProtocolUtils.getResponse(msg, null, ResponseStatus.BAD_REQUEST);
 		}
 	}
 

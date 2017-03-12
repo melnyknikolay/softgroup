@@ -3,7 +3,6 @@ package com.softgroup.common.router.api.factory;
 import com.softgroup.common.protocol.Request;
 import com.softgroup.common.router.api.Handler;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
@@ -15,7 +14,7 @@ import java.util.stream.Collectors;
  * Created by nikmlk on 24.02.17.
  */
 
-public abstract class AbstractFactory<T extends Handler> implements Factory<T> {
+public abstract class AbstractHandlerFactory<T extends Handler> implements HandlerFactory<T> {
 
     private Map<String, T> handlersMap;
 
