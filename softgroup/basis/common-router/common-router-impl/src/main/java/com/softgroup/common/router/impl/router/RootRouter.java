@@ -18,13 +18,4 @@ public class RootRouter<T extends RootFactory> extends AbstractRouterHandler<T>{
     public String getName() {
         return "root";
     }
-
-    @Override
-    public Response<?> handle(Request<?> msg) {
-        try {
-            return super.handle(msg);
-        }catch (Exception e){
-            return ProtocolBeansFactory.serverError(msg);
-        }
-    }
 }
