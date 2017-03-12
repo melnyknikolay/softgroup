@@ -1,14 +1,11 @@
 package com.softgroup.profile.impl.handler;
 
-import com.softgroup.common.protocol.ProtocolBeansFactory;
 import com.softgroup.common.protocol.Request;
 import com.softgroup.common.protocol.Response;
 import com.softgroup.common.protocol.ResponseStatus;
 import com.softgroup.common.router.api.AbstractRequestHandler;
 import com.softgroup.profile.api.message.GetLastTimeOnlineRequest;
 import com.softgroup.profile.api.message.GetLastTimeOnlineResponse;
-import com.softgroup.profile.api.message.SetProfileSettingsRequest;
-import com.softgroup.profile.api.message.SetProfileSettingsResponse;
 import com.softgroup.profile.api.router.ProfileRequestHandler;
 import org.springframework.stereotype.Component;
 

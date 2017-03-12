@@ -1,6 +1,5 @@
 package com.softgroup.profile.impl.handler;
 
-import com.softgroup.common.protocol.ProtocolBeansFactory;
 import com.softgroup.common.protocol.Request;
 import com.softgroup.common.protocol.Response;
 import com.softgroup.common.protocol.ResponseStatus;
