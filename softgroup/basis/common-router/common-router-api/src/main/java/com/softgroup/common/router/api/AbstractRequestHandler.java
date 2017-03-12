@@ -21,7 +21,7 @@ public abstract class AbstractRequestHandler<T extends RequestData, R extends Re
 			Request<T> typedRequest = ProtocolUtils.getRequest(msg, data);
 			return doHandle(typedRequest);
 		}catch (MapperException e){
-			return (Response<R>)ProtocolUtils.errorResponse(msg, ResponseStatus.BAD_REQUEST);
+			return ProtocolUtils.errorResponse(msg, ResponseStatus.BAD_REQUEST);
 		}
 	}
 
