@@ -19,9 +19,9 @@ public abstract class AbstractRouterHandler<T extends HandlerFactory> implements
             if (handler != null){
                 return handler.handle(msg);
             }
-            return ProtocolUtils.getResponse(msg, null, ResponseStatus.NOT_FOUND);
+            return ProtocolUtils.errorResponse(msg, ResponseStatus.NOT_FOUND);
         }catch (Exception e){
-            return ProtocolUtils.getResponse(msg, null, ResponseStatus.INTERNAL_SERVER_ERROR);
+            return ProtocolUtils.errorResponse(msg, ResponseStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
