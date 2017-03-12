@@ -3,8 +3,10 @@ package com.softgroup.authorithation.impl.handler;
 import com.softgroup.authorization.api.message.LoginRequest;
 import com.softgroup.authorization.api.message.LoginResponse;
 import com.softgroup.authorization.api.router.AuthorizationRequestHandler;
+import com.softgroup.common.protocol.ProtocolBeansFactory;
 import com.softgroup.common.protocol.Request;
 import com.softgroup.common.protocol.Response;
+import com.softgroup.common.protocol.ResponseStatus;
 import com.softgroup.common.router.api.AbstractRequestHandler;
 import org.springframework.stereotype.Component;
 
@@ -21,7 +23,6 @@ public class LoginHandler<T extends LoginRequest, R extends LoginResponse> exten
 
     @Override
     protected Response<R> doHandle(Request<T> msg) {
-        //ToDo
-        return null;
+        return ProtocolBeansFactory.getResponse(msg, null, ResponseStatus.NOT_IMPLEMENTED);
     }
 }
