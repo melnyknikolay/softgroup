@@ -8,22 +8,22 @@ import com.softgroup.common.protocol.RequestData;
 public class SmsConfirmRequest implements RequestData {
     private static final long serialVersionUID = 16282141842368961L;
 
-    private String auth_code;
-    private String registration_request_uuid;
+    private String authCode;
+    private String registrationRequestUuid;
 
-    public String getAuth_code() {
-        return auth_code;
+    public String getAuthCode() {
+        return authCode;
     }
 
-    public void setAuth_code(String auth_code) {
-        this.auth_code = auth_code;
+    public void setAuthCode(String authCode) {
+        this.authCode = authCode;
     }
 
-    public String getRegistration_request_uuid() {
-        return registration_request_uuid;
+    public String getRegistrationRequestUuid() {
+        return registrationRequestUuid;
     }
 
-    public void setRegistration_request_uuid(String registration_request_uuid) {
-        this.registration_request_uuid = registration_request_uuid;
+    public void setRegistrationRequestUuid(String registrationRequestUuid) {
+        this.registrationRequestUuid = registrationRequestUuid;
     }
 }
