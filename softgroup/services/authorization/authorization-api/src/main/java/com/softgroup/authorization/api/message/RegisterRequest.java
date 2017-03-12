@@ -9,31 +9,31 @@ import com.softgroup.common.protocol.RequestData;
 public class RegisterRequest implements RequestData {
 	private static final long serialVersionUID = -645554380912935546L;
 
-	private Integer phone_number;
-	private String locale_code;
-	private String device_id;
+	private Integer phoneNumber;
+	private String localeCode;
+	private String deviceId;
 
-	public Integer getPhone_number() {
-		return phone_number;
+	public Integer getPhoneNumber() {
+		return phoneNumber;
 	}
 
-	public void setPhone_number(Integer phone_number) {
-		this.phone_number = phone_number;
+	public void setPhoneNumber(Integer phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
-	public String getLocale_code() {
-		return locale_code;
+	public String getLocaleCode() {
+		return localeCode;
 	}
 
-	public void setLocale_code(String locale_code) {
-		this.locale_code = locale_code;
+	public void setLocaleCode(String localeCode) {
+		this.localeCode = localeCode;
 	}
 
-	public String getDevice_id() {
-		return device_id;
+	public String getDeviceId() {
+		return deviceId;
 	}
 
-	public void setDevice_id(String device_id) {
-		this.device_id = device_id;
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
 	}
 }

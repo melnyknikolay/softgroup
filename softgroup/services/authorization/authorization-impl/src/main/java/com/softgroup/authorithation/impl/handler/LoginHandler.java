@@ -3,6 +3,7 @@ package com.softgroup.authorithation.impl.handler;
 import com.softgroup.authorization.api.message.LoginRequest;
 import com.softgroup.authorization.api.message.LoginResponse;
 import com.softgroup.authorization.api.router.AuthorizationRequestHandler;
+import com.softgroup.common.protocol.ProtocolUtils;
 import com.softgroup.common.protocol.Request;
 import com.softgroup.common.protocol.Response;
 import com.softgroup.common.protocol.ResponseStatus;
@@ -14,14 +15,14 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class LoginHandler<T extends LoginRequest, R extends LoginResponse> extends AbstractRequestHandler<T, R> implements AuthorizationRequestHandler {
+public class LoginHandler extends AbstractRequestHandler<LoginRequest, LoginResponse> implements AuthorizationRequestHandler {
     @Override
     public String getName() {
         return "login";
     }
 
     @Override
-    protected Response<R> doHandle(Request<T> msg) {
-        return ProtocolBeansFactory.getResponse(msg, null, ResponseStatus.NOT_IMPLEMENTED);
+    protected Response<LoginResponse> doHandle(Request<LoginRequest> msg) {
+        return ProtocolUtils.errorResponse(msg, ResponseStatus.NOT_IMPLEMENTED);
     }
 }

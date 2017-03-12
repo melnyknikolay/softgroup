@@ -3,6 +3,7 @@ package com.softgroup.authorithation.impl.handler;
 import com.softgroup.authorization.api.message.RegisterRequest;
 import com.softgroup.authorization.api.message.RegisterResponse;
 import com.softgroup.authorization.api.router.AuthorizationRequestHandler;
+import com.softgroup.common.protocol.ProtocolUtils;
 import com.softgroup.common.protocol.Request;
 import com.softgroup.common.protocol.Response;
 import com.softgroup.common.protocol.ResponseStatus;
@@ -14,7 +15,7 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class RegisterHandler <T extends RegisterRequest, R extends RegisterResponse> extends AbstractRequestHandler<T, R> implements AuthorizationRequestHandler {
+public class RegisterHandler extends AbstractRequestHandler<RegisterRequest, RegisterResponse> implements AuthorizationRequestHandler {
 
     @Override
     public String getName() {
@@ -22,7 +23,7 @@ public class RegisterHandler <T extends RegisterRequest, R extends RegisterRespo
     }
 
     @Override
-    protected Response<R> doHandle(Request<T> msg) {
-        return ProtocolBeansFactory.getResponse(msg, null, ResponseStatus.NOT_IMPLEMENTED);
+    protected Response<RegisterResponse> doHandle(Request<RegisterRequest> msg) {
+        return ProtocolUtils.errorResponse(msg, ResponseStatus.NOT_IMPLEMENTED);
     }
 }

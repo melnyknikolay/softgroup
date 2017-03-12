@@ -8,13 +8,13 @@ import com.softgroup.common.protocol.ResponseData;
 public class SmsConfirmResponse implements ResponseData {
     private static final long serialVersionUID = 636717510400790106L;
 
-    private String device_token;
+    private String deviceToken;
 
-    public String getDevice_token() {
-        return device_token;
+    public String getDeviceToken() {
+        return deviceToken;
     }
 
-    public void setDevice_token(String device_token) {
-        this.device_token = device_token;
+    public void setDeviceToken(String deviceToken) {
+        this.deviceToken = deviceToken;
     }
 }

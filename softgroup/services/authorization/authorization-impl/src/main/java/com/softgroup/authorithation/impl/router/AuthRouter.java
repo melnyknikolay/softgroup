@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class AuthRouter<T extends AuthorizationFactory> extends AbstractRouterHandler<T> implements AuthorizationRouterHandler {
+public class AuthRouter extends AbstractRouterHandler<AuthorizationFactory> implements AuthorizationRouterHandler {
 
     @Override
     public String getName() {

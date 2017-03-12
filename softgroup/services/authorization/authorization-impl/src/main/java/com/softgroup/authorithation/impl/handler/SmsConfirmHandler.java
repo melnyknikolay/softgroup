@@ -3,6 +3,7 @@ package com.softgroup.authorithation.impl.handler;
 import com.softgroup.authorization.api.message.SmsConfirmRequest;
 import com.softgroup.authorization.api.message.SmsConfirmResponse;
 import com.softgroup.authorization.api.router.AuthorizationRequestHandler;
+import com.softgroup.common.protocol.ProtocolUtils;
 import com.softgroup.common.protocol.Request;
 import com.softgroup.common.protocol.Response;
 import com.softgroup.common.protocol.ResponseStatus;
@@ -14,7 +15,7 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class SmsConfirmHandler <T extends SmsConfirmRequest, R extends SmsConfirmResponse> extends AbstractRequestHandler<T, R> implements AuthorizationRequestHandler {
+public class SmsConfirmHandler extends AbstractRequestHandler<SmsConfirmRequest, SmsConfirmResponse> implements AuthorizationRequestHandler {
 
     @Override
     public String getName() {
@@ -22,7 +23,7 @@ public class SmsConfirmHandler <T extends SmsConfirmRequest, R extends SmsConfir
     }
 
     @Override
-    protected Response<R> doHandle(Request<T> msg) {
-        return ProtocolBeansFactory.getResponse(msg, null, ResponseStatus.NOT_IMPLEMENTED);
+    protected Response<SmsConfirmRequest> doHandle(Request<SmsConfirmResponse> msg) {
+        return ProtocolUtils.getResponse(msg, ResponseStatus.NOT_IMPLEMENTED);
     }
 }
