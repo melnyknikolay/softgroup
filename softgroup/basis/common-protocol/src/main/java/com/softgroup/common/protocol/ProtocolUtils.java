@@ -28,7 +28,7 @@ public class ProtocolUtils {
         return getResponse(msg, data, ResponseStatus.OK);
     }
 
-    public static <T extends Serializable> Response<?> errorResponse(Request<?> msg, ResponseStatus status){
+    public static <T extends Serializable> Response<T> errorResponse(Request<?> msg, ResponseStatus status){
         return getResponse(msg, null, status);
     }
 }
