@@ -6,13 +6,6 @@ import com.softgroup.common.router.api.Handler;
 /**
  * Created by nikmlk on 26.02.17.
  */
-
-public class HandlerFactory<T extends Handler> extends AbstractFactory<T>  implements Factory<T> {
-
-    @Override
-    protected String getKey(Request<?> msg) {
-        return msg.getHeader().getCommand();
-    }
-
-
+public interface HandlerFactory<T extends Handler> {
+    T getHandler(Request<?> msg);
 }

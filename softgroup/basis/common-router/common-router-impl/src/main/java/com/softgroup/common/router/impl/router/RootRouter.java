@@ -1,11 +1,7 @@
 package com.softgroup.common.router.impl.router;
 
-
-import com.softgroup.common.protocol.ProtocolBeansFactory;
-import com.softgroup.common.protocol.Request;
-import com.softgroup.common.protocol.Response;
 import com.softgroup.common.router.api.AbstractRouterHandler;
-import com.softgroup.common.router.api.factory.RootFactory;
+import com.softgroup.common.router.api.factory.RootRouterFactory;
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,7 +9,7 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class RootRouter<T extends RootFactory> extends AbstractRouterHandler<T>{
+public class RootRouter extends AbstractRouterHandler<RootRouterFactory>{
     @Override
     public String getName() {
         return "root";
