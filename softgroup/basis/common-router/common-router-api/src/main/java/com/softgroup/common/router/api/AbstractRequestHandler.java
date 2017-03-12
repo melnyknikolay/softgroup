@@ -2,20 +2,26 @@ package com.softgroup.common.router.api;
 
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.softgroup.common.datamapper.DataMapper;
 import com.softgroup.common.exceptions.MapperException;
 import com.softgroup.common.protocol.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 public abstract class AbstractRequestHandler<T extends RequestData, R extends ResponseData> implements RequestHandler {
 
+	@Autowired
+	private DataMapper mapper;
+
 	@Override
-	public Response<R> handle(Request<?> msg) throws ClassNotFoundException {
+	public Response<R> handle(Request<?> msg) {
 		try {
-			Request<T> typedRequest = ProtocolBeansFactory.getTypedRequest(msg, new TypeReference<T>() {
+			T data = mapper.convert(msg.getData(), new TypeReference<T>() {
 			});
+			Request<T> typedRequest = ProtocolBeansFactory.getRequest(msg, data);
 			return doHandle(typedRequest);
 		}catch (MapperException e){
-			return ProtocolBeansFactory.badRequest(msg);
+			return ProtocolBeansFactory.getResponse(msg, null, ResponseStatus.BAD_REQUEST);
 		}
 	}
 
