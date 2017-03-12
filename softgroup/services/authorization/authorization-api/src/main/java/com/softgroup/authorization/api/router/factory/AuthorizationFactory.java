@@ -1,10 +1,10 @@
 package com.softgroup.authorization.api.router.factory;
 
 import com.softgroup.authorization.api.router.AuthorizationRequestHandler;
-import com.softgroup.common.router.api.factory.Factory;
+import com.softgroup.common.router.api.factory.HandlerFactory;
 
 /**
  * Created by nikmlk on 09.03.17.
  */
-public interface AuthorizationFactory<T extends AuthorizationRequestHandler> extends Factory<T> {
+public interface AuthorizationFactory extends HandlerFactory<AuthorizationRequestHandler> {
 }
