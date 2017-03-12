@@ -1,7 +1,9 @@
 package com.softgroup.profile.impl.handler;
 
+import com.softgroup.common.protocol.ProtocolBeansFactory;
 import com.softgroup.common.protocol.Request;
 import com.softgroup.common.protocol.Response;
+import com.softgroup.common.protocol.ResponseStatus;
 import com.softgroup.common.router.api.AbstractRequestHandler;
 import com.softgroup.profile.api.message.GetMyProfileRequest;
 import com.softgroup.profile.api.message.GetMyProfileResponse;
@@ -21,7 +23,6 @@ public class GetMyProfileHandler <T extends GetMyProfileRequest, R extends GetMy
 
     @Override
     protected Response<R> doHandle(Request<T> msg) {
-        //ToDo
-        return null;
+        return ProtocolBeansFactory.getResponse(msg, null, ResponseStatus.NOT_IMPLEMENTED);
     }
 }

@@ -1,7 +1,9 @@
 package com.softgroup.profile.impl.handler;
 
+import com.softgroup.common.protocol.ProtocolBeansFactory;
 import com.softgroup.common.protocol.Request;
 import com.softgroup.common.protocol.Response;
+import com.softgroup.common.protocol.ResponseStatus;
 import com.softgroup.common.router.api.AbstractRequestHandler;
 import com.softgroup.profile.api.message.ContactsSyncRequest;
 import com.softgroup.profile.api.message.ContactsSyncResponse;
@@ -22,7 +24,6 @@ public class ContactsSyncHandler<T extends ContactsSyncRequest, R extends Contac
 
     @Override
     protected Response<R> doHandle(Request<T> msg) {
-        //ToDo
-        return null;
+        return ProtocolBeansFactory.getResponse(msg, null, ResponseStatus.NOT_IMPLEMENTED);
     }
 }
