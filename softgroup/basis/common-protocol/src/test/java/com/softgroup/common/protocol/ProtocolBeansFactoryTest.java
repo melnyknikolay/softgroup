@@ -26,14 +26,14 @@ public class ProtocolBeansFactoryTest {
 
     @Test
     public void getRequestTest(){
-        Request<String> result = ProtocolBeansFactory.getRequest(this.request, mapper.convert(request.getData(), String.class));
+        Request<String> result = ProtocolUtils.getRequest(this.request, mapper.convert(request.getData(), String.class));
         assertThat(result.getData() , isA(String.class));
         assertEquals(result.getHeader(), request.getHeader());
     }
 
     @Test
     public void getResponseOkTest(){
-        Response<String> result = ProtocolBeansFactory.getResponse(request, "responseTestData");
+        Response<String> result = ProtocolUtils.getResponse(request, "responseTestData");
         assertThat(result.getData() , isA(String.class));
         assertEquals("responseTestData", result.getData());
         assertThat(result.getStatus(), is(ResponseStatus.OK));
@@ -41,7 +41,7 @@ public class ProtocolBeansFactoryTest {
 
     @Test
     public void getResponseWithStatusTest(){
-        Response<Integer> result = ProtocolBeansFactory.getResponse(request, 524, ResponseStatus.NOT_IMPLEMENTED);
+        Response<Integer> result = ProtocolUtils.getResponse(request, 524, ResponseStatus.NOT_IMPLEMENTED);
         assertThat(result.getData() , isA(Integer.class));
         assertEquals((long) 524, (long)result.getData());
         assertThat(result.getStatus(), is(ResponseStatus.NOT_IMPLEMENTED));
