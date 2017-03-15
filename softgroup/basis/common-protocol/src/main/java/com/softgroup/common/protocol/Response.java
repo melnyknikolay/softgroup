@@ -7,13 +7,7 @@ public class Response<T extends Serializable> extends RoutedAction<T> {
 
 	private ResponseStatus status;
 
-	public Response() {
-	}
-
-	private Response(ActionHeader header, T data, ResponseStatus status) {
-		this.setHeader(header);
-		this.setData(data);
-		this.status = status;
+	private Response() {
 	}
 
 	public ResponseStatus getStatus() {
@@ -24,35 +18,30 @@ public class Response<T extends Serializable> extends RoutedAction<T> {
 		this.status = status;
 	}
 
-
-
 	public static class Builder<T extends Serializable>{
 
-		private ActionHeader header;
-		private T data;
-		private ResponseStatus status;
+		private Response<T> response = new Response<T>();
 
 		public Builder() {
 		}
 
 		public Builder setHeader(ActionHeader header) {
-			this.header = header;
+			response.setHeader(header);
 			return this;
 		}
 
 		public Builder setData(T data) {
-			this.data = data;
+			response.setData(data);
 			return this;
 		}
 
 		public Builder setStatus(ResponseStatus status) {
-			this.status = status;
+			response.setStatus(status);
 			return this;
 		}
 
 		public Response<T> build() {
-			return new Response<T>(header, data, status);
+			return response;
 		}
 	}
-
 }
