@@ -8,22 +8,85 @@ import java.io.Serializable;
 public class Message implements Serializable {
     private static final long serialVersionUID = 6207472905627817341L;
 
-    private Integer uuid;
-    private String msg;
+    private String id;
+    private String senderId;
+    private String conversationId;
+    private Integer messageType;
+    private String payload;
+    private Integer status;
+    private Long createTime;
+    private Long serverReceiveTime;
+    private Long messageIndex;
 
-    public Integer getUuid() {
-        return uuid;
+    public String getId() {
+        return id;
     }
 
-    public void setUuid(Integer uuid) {
-        this.uuid = uuid;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getMsg() {
-        return msg;
+    public String getSenderId() {
+        return senderId;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setSenderId(String senderId) {
+        this.senderId = senderId;
+    }
+
+    public String getConversationId() {
+        return conversationId;
+    }
+
+    public void setConversationId(String conversationId) {
+        this.conversationId = conversationId;
+    }
+
+    public Integer getMessageType() {
+        return messageType;
+    }
+
+    public void setMessageType(Integer messageType) {
+        this.messageType = messageType;
+    }
+
+    public String getPayload() {
+        return payload;
+    }
+
+    public void setPayload(String payload) {
+        this.payload = payload;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public Long getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Long createTime) {
+        this.createTime = createTime;
+    }
+
+    public Long getServerReceiveTime() {
+        return serverReceiveTime;
+    }
+
+    public void setServerReceiveTime(Long serverReceiveTime) {
+        this.serverReceiveTime = serverReceiveTime;
+    }
+
+    public Long getMessageIndex() {
+        return messageIndex;
+    }
+
+    public void setMessageIndex(Long messageIndex) {
+        this.messageIndex = messageIndex;
     }
 }

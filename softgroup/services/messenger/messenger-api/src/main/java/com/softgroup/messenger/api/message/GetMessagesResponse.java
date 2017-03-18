@@ -1,7 +1,7 @@
 package com.softgroup.messenger.api.message;
 
 import com.softgroup.common.protocol.ResponseData;
-import com.softgroup.messenger.api.dto.Cursor;
+import com.softgroup.messenger.api.dto.RequestCursor;
 import com.softgroup.messenger.api.dto.Message;
 
 import java.util.List;
@@ -14,7 +14,7 @@ public class GetMessagesResponse implements ResponseData {
 
     private List<Message> messages;
     private Integer total_unread;
-    private Cursor cursor;
+    private RequestCursor requestCursor;
 
     public List<Message> getMessages() {
         return messages;
@@ -32,11 +32,11 @@ public class GetMessagesResponse implements ResponseData {
         this.total_unread = total_unread;
     }
 
-    public Cursor getCursor() {
-        return cursor;
+    public RequestCursor getRequestCursor() {
+        return requestCursor;
     }
 
-    public void setCursor(Cursor cursor) {
-        this.cursor = cursor;
+    public void setRequestCursor(RequestCursor requestCursor) {
+        this.requestCursor = requestCursor;
     }
 }

@@ -23,7 +23,7 @@ public class SmsConfirmHandler extends AbstractRequestHandler<SmsConfirmRequest,
     }
 
     @Override
-    protected Response<SmsConfirmRequest> doHandle(Request<SmsConfirmResponse> msg) {
-        return ProtocolUtils.getResponse(msg, ResponseStatus.NOT_IMPLEMENTED);
+    protected Response<SmsConfirmResponse> doHandle(Request<SmsConfirmRequest> msg) {
+        return ProtocolUtils.errorResponse(msg, ResponseStatus.NOT_IMPLEMENTED);
     }
 }
