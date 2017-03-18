@@ -13,6 +13,8 @@
 
 	<modules>
 
+        <module>rest</module>
+		<module>ws</module>
 	</modules>
 
 	<properties>
