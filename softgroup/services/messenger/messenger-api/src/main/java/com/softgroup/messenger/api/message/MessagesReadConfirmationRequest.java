@@ -10,22 +10,22 @@ import java.util.List;
 public class MessagesReadConfirmationRequest implements RequestData {
     private static final long serialVersionUID = -646632386542250256L;
 
-    private Integer conversation_id;
-    private List<Integer> messages_ids;
+    private Integer conversationId;
+    private List<Integer> messagesIds;
 
-    public Integer getConversation_id() {
-        return conversation_id;
+    public Integer getConversationId() {
+        return conversationId;
     }
 
-    public void setConversation_id(Integer conversation_id) {
-        this.conversation_id = conversation_id;
+    public void setConversationId(Integer conversationId) {
+        this.conversationId = conversationId;
     }
 
-    public List<Integer> getMessages_ids() {
-        return messages_ids;
+    public List<Integer> getMessagesIds() {
+        return messagesIds;
     }
 
-    public void setMessages_ids(List<Integer> messages_ids) {
-        this.messages_ids = messages_ids;
+    public void setMessagesIds(List<Integer> messagesIds) {
+        this.messagesIds = messagesIds;
     }
 }

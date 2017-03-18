@@ -11,7 +11,7 @@ public class CreateConversationRequest implements RequestData {
     private static final long serialVersionUID = -9179734652273263170L;
 
     private Integer type;
-    private List<Integer> members_ids;
+    private List<Integer> membersIds;
 
     public Integer getType() {
         return type;
@@ -21,11 +21,11 @@ public class CreateConversationRequest implements RequestData {
         this.type = type;
     }
 
-    public List<Integer> getMembers_ids() {
-        return members_ids;
+    public List<Integer> getMembersIds() {
+        return membersIds;
     }
 
-    public void setMembers_ids(List<Integer> members_ids) {
-        this.members_ids = members_ids;
+    public void setMembersIds(List<Integer> membersIds) {
+        this.membersIds = membersIds;
     }
 }

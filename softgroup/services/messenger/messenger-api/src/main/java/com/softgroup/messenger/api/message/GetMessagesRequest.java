@@ -9,15 +9,15 @@ import com.softgroup.messenger.api.dto.RequestCursor;
 public class GetMessagesRequest implements RequestData {
     private static final long serialVersionUID = 6429785462395127153L;
 
-    private Integer conversation_id;
+    private Integer conversationId;
     private RequestCursor requestCursor;
 
-    public Integer getConversation_id() {
-        return conversation_id;
+    public Integer getConversationId() {
+        return conversationId;
     }
 
-    public void setConversation_id(Integer conversation_id) {
-        this.conversation_id = conversation_id;
+    public void setConversationId(Integer conversationId) {
+        this.conversationId = conversationId;
     }
 
     public RequestCursor getRequestCursor() {

@@ -1,8 +1,8 @@
 package com.softgroup.messenger.api.message;
 
 import com.softgroup.common.protocol.ResponseData;
-import com.softgroup.messenger.api.dto.RequestCursor;
 import com.softgroup.messenger.api.dto.Message;
+import com.softgroup.messenger.api.dto.ResponseCursor;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ public class GetMessagesResponse implements ResponseData {
     private static final long serialVersionUID = 5887586929589615635L;
 
     private List<Message> messages;
-    private Integer total_unread;
-    private RequestCursor requestCursor;
+    private Integer totalUnread;
+    private ResponseCursor reresponseCursor;
 
     public List<Message> getMessages() {
         return messages;
@@ -24,19 +24,19 @@ public class GetMessagesResponse implements ResponseData {
         this.messages = messages;
     }
 
-    public Integer getTotal_unread() {
-        return total_unread;
+    public Integer getTotalUnread() {
+        return totalUnread;
     }
 
-    public void setTotal_unread(Integer total_unread) {
-        this.total_unread = total_unread;
+    public void setTotalUnread(Integer totalUnread) {
+        this.totalUnread = totalUnread;
     }
 
-    public RequestCursor getRequestCursor() {
-        return requestCursor;
+    public ResponseCursor getReresponseCursor() {
+        return reresponseCursor;
     }
 
-    public void setRequestCursor(RequestCursor requestCursor) {
-        this.requestCursor = requestCursor;
+    public void setReresponseCursor(ResponseCursor reresponseCursor) {
+        this.reresponseCursor = reresponseCursor;
     }
 }

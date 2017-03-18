@@ -11,22 +11,22 @@ import java.util.List;
 public class ContactsSyncRequest implements RequestData {
     private static final long serialVersionUID = 563692140750183986L;
 
-    private List<Contact> added_contacts;
-    private List<Contact> removed_contacts;
+    private List<Contact> addedContacts;
+    private List<Contact> removedContacts;
 
-    public List<Contact> getAdded_contacts() {
-        return added_contacts;
+    public List<Contact> getAddedContacts() {
+        return addedContacts;
     }
 
-    public void setAdded_contacts(List<Contact> added_contacts) {
-        this.added_contacts = added_contacts;
+    public void setAddedContacts(List<Contact> addedContacts) {
+        this.addedContacts = addedContacts;
     }
 
-    public List<Contact> getRemoved_contacts() {
-        return removed_contacts;
+    public List<Contact> getRemovedContacts() {
+        return removedContacts;
     }
 
-    public void setRemoved_contacts(List<Contact> removed_contacts) {
-        this.removed_contacts = removed_contacts;
+    public void setRemovedContacts(List<Contact> removedContacts) {
+        this.removedContacts = removedContacts;
     }
 }

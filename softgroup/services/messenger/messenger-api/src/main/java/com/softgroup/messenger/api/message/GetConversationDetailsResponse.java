@@ -1,7 +1,7 @@
 package com.softgroup.messenger.api.message;
 
 import com.softgroup.common.protocol.ResponseData;
-import com.softgroup.messenger.api.dto.Conversation_details;
+import com.softgroup.messenger.api.dto.ConversationDetails;
 
 
 /**
@@ -10,13 +10,13 @@ import com.softgroup.messenger.api.dto.Conversation_details;
 public class GetConversationDetailsResponse implements ResponseData {
     private static final long serialVersionUID = -943820030004114610L;
 
-    private Conversation_details details;
+    private ConversationDetails details;
 
-    public Conversation_details getDetails() {
+    public ConversationDetails getDetails() {
         return details;
     }
 
-    public void setDetails(Conversation_details details) {
+    public void setDetails(ConversationDetails details) {
         this.details = details;
     }
 }

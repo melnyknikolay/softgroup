@@ -11,13 +11,13 @@ import java.util.List;
 public class GetConversationsSettingsResponse implements ResponseData {
     private static final long serialVersionUID = 3868132571019599769L;
 
-    private List<ConversationSettings> conversations_settings;
+    private List<ConversationSettings> conversationsSettings;
 
-    public List<ConversationSettings> getConversations_settings() {
-        return conversations_settings;
+    public List<ConversationSettings> getConversationsSettings() {
+        return conversationsSettings;
     }
 
-    public void setConversations_settings(List<ConversationSettings> conversations_settings) {
-        this.conversations_settings = conversations_settings;
+    public void setConversationsSettings(List<ConversationSettings> conversationsSettings) {
+        this.conversationsSettings = conversationsSettings;
     }
 }

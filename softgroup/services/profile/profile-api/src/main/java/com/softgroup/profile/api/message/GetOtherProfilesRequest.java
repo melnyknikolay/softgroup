@@ -8,13 +8,13 @@ import com.softgroup.common.protocol.RequestData;
 public class GetOtherProfilesRequest implements RequestData {
     private static final long serialVersionUID = -7007337128218165529L;
 
-    private Integer user_id;
+    private Integer[] userIds;
 
-    public Integer getUser_id() {
-        return user_id;
+    public Integer[] getUserIds() {
+        return userIds;
     }
 
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
+    public void setUserIds(Integer[] userIds) {
+        this.userIds = userIds;
     }
 }

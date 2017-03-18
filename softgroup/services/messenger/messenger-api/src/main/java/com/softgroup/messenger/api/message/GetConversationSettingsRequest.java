@@ -8,13 +8,13 @@ import com.softgroup.common.protocol.RequestData;
 public class GetConversationSettingsRequest implements RequestData {
     private static final long serialVersionUID = 9153717599335927133L;
 
-    private Integer conversation_id;
+    private Integer conversationId;
 
-    public Integer getConversation_id() {
-        return conversation_id;
+    public Integer getConversationId() {
+        return conversationId;
     }
 
-    public void setConversation_id(Integer conversation_id) {
-        this.conversation_id = conversation_id;
+    public void setConversationId(Integer conversationId) {
+        this.conversationId = conversationId;
     }
 }
