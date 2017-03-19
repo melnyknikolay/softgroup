@@ -11,11 +11,11 @@
 
     <artifactId>common-dao-impl</artifactId>
 
-
     <dependencies>
         <dependency>
             <groupId>com.softgroup</groupId>
             <artifactId>common-dao-api</artifactId>
         </dependency>
     </dependencies>
+
 </project>
