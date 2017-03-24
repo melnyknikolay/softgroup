@@ -22,6 +22,7 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<slf4j.velsion>1.7.24</slf4j.velsion>
+		<jackson.velsion>2.9.0.pr1</jackson.velsion>
 	</properties>
 
 	<dependencyManagement>
@@ -71,6 +72,12 @@
 				<version>${spring.core.version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${spring.core.version}</version>
+			</dependency>
+
 			<!-- TEST -->
 			<dependency>
 				<groupId>javax.servlet</groupId>
@@ -91,8 +98,17 @@
 				<version>19.0</version>
 			</dependency>
 
-
-
+			<!--JSON-->
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson.velsion}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.datatype</groupId>
+				<artifactId>jackson-datatype-hibernate4</artifactId>
+				<version>${jackson.velsion}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -241,13 +257,6 @@
 			<groupId>org.modelmapper</groupId>
 			<artifactId>modelmapper</artifactId>
 			<version>0.7.5</version>
-		</dependency>
-
-		<!--DB-->
-		<dependency>
-			<groupId>org.liquibase</groupId>
-			<artifactId>liquibase-core</artifactId>
-			<version>3.5.3</version>
 		</dependency>
 
 

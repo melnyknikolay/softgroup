@@ -1,5 +1,8 @@
 package com.softgroup.common.dao.api.entities;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 import java.io.Serializable;
@@ -9,7 +12,7 @@ import java.util.List;
  * Created by Odin on 29.02.2016.
  */
 @Entity
-@Table(name = "profiles")
+@Table(name = "profile")
 public class ProfileEntity implements Serializable{
 
     private static final long serialVersionUID = 2645460488213358603L;

@@ -37,7 +37,7 @@ public class CommonDaoAppCfg {
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-        entityManagerFactoryBean.setDataSource(dataSource());
+        entityManagerFactoryBean.setDataSource(liquibase().getDataSource());
         entityManagerFactoryBean.setJpaVendorAdapter(createJpaVendorAdapter());
         entityManagerFactoryBean.setPackagesToScan(ENTITY_PACKAGES);
 

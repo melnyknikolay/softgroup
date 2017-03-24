@@ -1,6 +1,6 @@
 package com.softgroup.messenger.impl.router.factory;
 
-import com.softgroup.common.router.api.factory.HandlerFactory;
+import com.softgroup.common.router.api.factory.CommonHandlerFactory;
 import com.softgroup.messenger.api.router.MessengerRequestHandler;
 import com.softgroup.messenger.api.router.factory.MessengerFactory;
 import org.springframework.stereotype.Component;
@@ -10,5 +10,5 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class MessageFactoryImpl<T extends MessengerRequestHandler> extends HandlerFactory<T> implements MessengerFactory<T> {
+public class MessageFactoryImpl extends CommonHandlerFactory<MessengerRequestHandler> implements MessengerFactory {
 }

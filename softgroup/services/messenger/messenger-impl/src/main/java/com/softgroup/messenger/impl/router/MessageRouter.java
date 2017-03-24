@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class MessageRouter<T extends MessengerFactory> extends AbstractRouterHandler<T> implements MessengerRouterHandler {
+public class MessageRouter extends AbstractRouterHandler<MessengerFactory> implements MessengerRouterHandler {
 
     @Override
     public String getName() {

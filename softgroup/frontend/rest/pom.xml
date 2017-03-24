@@ -10,6 +10,97 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>rest</artifactId>
+    <packaging>war</packaging>
+
+    <properties>
+        <spring.version>4.2.5.RELEASE</spring.version>
+
+    </properties>
+
+    <dependencies>
+
+        <!--COMMON-->
+        <dependency>
+            <groupId>com.softgroup</groupId>
+            <artifactId>common-datamapper</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.softgroup</groupId>
+            <artifactId>common-exceptions</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.softgroup</groupId>
+            <artifactId>common-protocol</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.softgroup</groupId>
+            <artifactId>common-router-api</artifactId>
+        </dependency>
+
+        <!-- SPRING -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+
+        <!--JSON-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-hibernate4</artifactId>
+        </dependency>
+
+        <!--TEST-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>

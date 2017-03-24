@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class ProfileRouter<T extends ProfileFactory> extends AbstractRouterHandler<T> implements ProfileRouterHandler {
+public class ProfileRouter extends AbstractRouterHandler<ProfileFactory> implements ProfileRouterHandler {
 
     @Override
     public String getName() {
