@@ -32,11 +32,6 @@
 
         <dependency>
             <groupId>com.softgroup</groupId>
-            <artifactId>common-protocol</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.softgroup</groupId>
             <artifactId>common-router-impl</artifactId>
             <version>${project.version}</version>
         </dependency>
